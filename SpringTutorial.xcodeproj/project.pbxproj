@@ -15,6 +15,7 @@
 		CF753A5A27FC5E6100979CBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF753A5927FC5E6100979CBA /* Assets.xcassets */; };
 		CF753A5D27FC5E6100979CBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF753A5B27FC5E6100979CBA /* LaunchScreen.storyboard */; };
 		CF753A6927FCAD7000979CBA /* AnimationPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF753A6827FCAD7000979CBA /* AnimationPreset.swift */; };
+		CFCED59C27FDA0A4009F0CCE /* SpringAnimationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCED59B27FDA0A4009F0CCE /* SpringAnimationData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		CF753A5C27FC5E6100979CBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF753A5E27FC5E6100979CBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF753A6827FCAD7000979CBA /* AnimationPreset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationPreset.swift; sourceTree = "<group>"; };
+		CFCED59B27FDA0A4009F0CCE /* SpringAnimationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringAnimationData.swift; sourceTree = "<group>"; };
 		F564D5D83D69F9B96E056C0F /* Pods-SpringTutorial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpringTutorial.release.xcconfig"; path = "Target Support Files/Pods-SpringTutorial/Pods-SpringTutorial.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +84,7 @@
 		CF753A4F27FC5E6100979CBA /* SpringTutorial */ = {
 			isa = PBXGroup;
 			children = (
+				CFCED59D27FDA0AC009F0CCE /* Services */,
 				CF753A6A27FCAD7600979CBA /* Model */,
 				CFB9140F27FCE67F00D5F3B3 /* App */,
 				CFB9141127FCE76700D5F3B3 /* ViewControllers */,
@@ -132,6 +135,14 @@
 				CF753A5927FC5E6100979CBA /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		CFCED59D27FDA0AC009F0CCE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CFCED59B27FDA0A4009F0CCE /* SpringAnimationData.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +263,7 @@
 				CF753A5527FC5E6100979CBA /* ViewController.swift in Sources */,
 				CF753A5127FC5E6100979CBA /* AppDelegate.swift in Sources */,
 				CF753A5327FC5E6100979CBA /* SceneDelegate.swift in Sources */,
+				CFCED59C27FDA0A4009F0CCE /* SpringAnimationData.swift in Sources */,
 				CF753A6927FCAD7000979CBA /* AnimationPreset.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,38 +16,31 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupLabel(presetInfoLabel)
+        setupLabel()
     }
     
-    @IBAction func runButtonPressed(_ sender: UIButton) {
-        animateView(animationView)
-        setupLabel(presetInfoLabel)
+    @IBAction func runButtonPressed() {
+        animateView()
+        setupLabel()
         
         springAnimation = AnimationPreset.getRandomAnimation()
-        sender.setTitle("Run \(springAnimation.animation)", for: .normal)
+        runButton.setTitle("Run \(springAnimation.animation)", for: .normal)
     }
 }
 
 // MARK: - Private Methods
 
 extension ViewController {
-    private func setupLabel(_ label: UILabel) {
-        label.text =
-"""
-preset: \(springAnimation.animation)
-curve: \(springAnimation.curve)
-force: \(String(format: "%.2f", springAnimation.force))
-duration: \(String(format: "%.2f", springAnimation.duration))
-delay: \(String(format: "%.2f", springAnimation.delay))
-"""
+    private func setupLabel() {
+        presetInfoLabel.text = springAnimation.description
     }
     
-    private func animateView(_ view: SpringView) {
-        view.animation = springAnimation.animation
-        view.curve = springAnimation.curve
-        view.force = springAnimation.force
-        view.duration = springAnimation.duration
-        view.delay = springAnimation.delay
-        view.animate()
+    private func animateView() {
+        animationView.animation = springAnimation.animation
+        animationView.curve = springAnimation.curve
+        animationView.force = CGFloat(springAnimation.force)
+        animationView.duration = CGFloat(springAnimation.duration)
+        animationView.delay = CGFloat(springAnimation.delay)
+        animationView.animate()
     }
 }
