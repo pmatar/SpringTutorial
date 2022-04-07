@@ -9,22 +9,20 @@ import Spring
 
 class ViewController: UIViewController {
     @IBOutlet var animationView: SpringView!
-    @IBOutlet var presetInfoLabel: UILabel!
-    @IBOutlet var runButton: UIButton!
-    
+    @IBOutlet var presetInfoLabel: UILabel! {
+        didSet {
+            setupLabel()
+        }
+    }
+        
     private var springAnimation = AnimationPreset.getRandomAnimation()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupLabel()
-    }
-    
-    @IBAction func runButtonPressed() {
+    @IBAction func runButtonPressed(_ sender: UIButton) {
         animateView()
         setupLabel()
         
         springAnimation = AnimationPreset.getRandomAnimation()
-        runButton.setTitle("Run \(springAnimation.animation)", for: .normal)
+        sender.setTitle("Run \(springAnimation.animation)", for: .normal)
     }
 }
 
@@ -38,9 +36,9 @@ extension ViewController {
     private func animateView() {
         animationView.animation = springAnimation.animation
         animationView.curve = springAnimation.curve
-        animationView.force = CGFloat(springAnimation.force)
-        animationView.duration = CGFloat(springAnimation.duration)
-        animationView.delay = CGFloat(springAnimation.delay)
+        animationView.force = springAnimation.force
+        animationView.duration = springAnimation.duration
+        animationView.delay = springAnimation.delay
         animationView.animate()
     }
 }
